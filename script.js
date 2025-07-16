@@ -113,3 +113,40 @@ function encerrarSistema() {
 voos.push(new Voo("101", "São Paulo", "08:00", 5));
 voos.push(new Voo("202", "Rio de Janeiro", "10:30", 5));
 voos.push(new Voo("303", "Brasília", "13:15", 5));
+
+function menuPrincipal() {
+  let opcao;
+  do {
+    opcao = parseInt(
+      prompt(
+        "\n===== MENU PRINCIPAL =====\n" +
+          "1 - Cadastrar Passageiro\n" +
+          "2 - Consultar Voos\n" +
+          "3 - Realizar Embarque\n" +
+          "4 - Emitir Bilhete\n" +
+          "5 - Encerrar Sistema\n" +
+          "Escolha uma opção:"
+      )
+    );
+
+    switch (opcao) {
+      case 1:
+        cadastrarPassageiro();
+        break;
+      case 2:
+        consultarVoosDisponiveis();
+        break;
+      case 3:
+        realizarEmbarque();
+        break;
+      case 4:
+        emitirBilhete();
+        break;
+      case 5:
+        encerrarSistema();
+        break;
+      default:
+        alert("Opção inválida.");
+    }
+  } while (opcao !== 5);
+}
