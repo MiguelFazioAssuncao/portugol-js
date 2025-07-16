@@ -61,5 +61,33 @@ function consultarVoosDisponiveis() {
 }
 
 function verificarBagagem(bagagem) {
-    bagagem.autorizada = bagagem.peso <= 23.0;
+  bagagem.autorizada = bagagem.peso <= 23.0;
+}
+
+function realizarEmbarque() {
+    const doc = prompt("Digite o documento do passageiro para embarque:");
+    let encontrou = false;
+  
+    for (let i = 0; i < passageiros.length; i++) {
+      if (passageiros[i].documento === doc) {
+        encontrou = true;
+        consultarVoosDisponiveis();
+        const vooEscolhido = prompt("Escolha o número do voo:");
+  
+        for (let j = 0; j < voos.length; j++) {
+          if (voos[j].numero === vooEscolhido && voos[j].quantidadeEmbarcados < voos[j].capacidade) {
+            passageiros[i].statusEmbarque = true;
+            voos[j].quantidadeEmbarcados++;
+            alert("Passageiro embarcado com sucesso.");
+            return;
+          }
+        }
+        alert("Voo não encontrado ou lotado.");
+      }
+    }
+  
+    if (!encontrou) {
+      alert("Passageiro não encontrado.");
+    }
   }
+  
