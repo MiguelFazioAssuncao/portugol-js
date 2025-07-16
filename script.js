@@ -81,16 +81,16 @@ function realizarEmbarque() {
         ) {
           passageiros[i].statusEmbarque = true;
           voos[j].quantidadeEmbarcados++;
-          alert("Passageiro embarcado com sucesso.");
+          console.log("Passageiro embarcado com sucesso.");
           return;
         }
       }
-      alert("Voo não encontrado ou lotado.");
+      console.log("Voo não encontrado ou lotado.");
     }
   }
 
   if (!encontrou) {
-    alert("Passageiro não encontrado.");
+    console.log("Passageiro não encontrado.");
   }
 }
 
@@ -107,7 +107,7 @@ function emitirBilhete() {
 }
 
 function encerrarSistema() {
-  alert("Encerrando sistema...");
+  console.log("Encerrando sistema...");
 }
 
 voos.push(new Voo("101", "São Paulo", "08:00", 5));
@@ -146,7 +146,7 @@ function menuPrincipal() {
         encerrarSistema();
         break;
       default:
-        alert("Opção inválida.");
+        console.log("Opção inválida.");
     }
   } while (opcao !== 5);
 }
