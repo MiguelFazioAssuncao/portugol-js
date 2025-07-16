@@ -51,3 +51,10 @@ function cadastrarPassageiro() {
     console.log("Limite de passageiros atingido!");
   }
 }
+
+function consultarVoosDisponiveis() {
+    voos.forEach((voo, i) => {
+      console.log(`Voo ${voo.numero} | Destino: ${voo.destino} | Horário: ${voo.horario}`);
+    });
+  }
+  
