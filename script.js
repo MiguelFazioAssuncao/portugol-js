@@ -105,3 +105,7 @@ function emitirBilhete() {
     );
   });
 }
+
+function encerrarSistema() {
+  alert("Encerrando sistema...");
+}
