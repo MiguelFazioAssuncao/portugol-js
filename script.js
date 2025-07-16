@@ -53,8 +53,13 @@ function cadastrarPassageiro() {
 }
 
 function consultarVoosDisponiveis() {
-    voos.forEach((voo, i) => {
-      console.log(`Voo ${voo.numero} | Destino: ${voo.destino} | Horário: ${voo.horario}`);
-    });
+  voos.forEach((voo, i) => {
+    console.log(
+      `Voo ${voo.numero} | Destino: ${voo.destino} | Horário: ${voo.horario}`
+    );
+  });
+}
+
+function verificarBagagem(bagagem) {
+    bagagem.autorizada = bagagem.peso <= 23.0;
   }
-  
