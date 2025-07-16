@@ -25,3 +25,7 @@ class Bagagem {
     }
 }
 
+let passageiros = [];
+let bagagens = [];
+let voos = [];
+let totalPassageiros = 0;
