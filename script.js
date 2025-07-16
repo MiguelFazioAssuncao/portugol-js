@@ -65,29 +65,43 @@ function verificarBagagem(bagagem) {
 }
 
 function realizarEmbarque() {
-    const doc = prompt("Digite o documento do passageiro para embarque:");
-    let encontrou = false;
-  
-    for (let i = 0; i < passageiros.length; i++) {
-      if (passageiros[i].documento === doc) {
-        encontrou = true;
-        consultarVoosDisponiveis();
-        const vooEscolhido = prompt("Escolha o número do voo:");
-  
-        for (let j = 0; j < voos.length; j++) {
-          if (voos[j].numero === vooEscolhido && voos[j].quantidadeEmbarcados < voos[j].capacidade) {
-            passageiros[i].statusEmbarque = true;
-            voos[j].quantidadeEmbarcados++;
-            alert("Passageiro embarcado com sucesso.");
-            return;
-          }
+  const doc = prompt("Digite o documento do passageiro para embarque:");
+  let encontrou = false;
+
+  for (let i = 0; i < passageiros.length; i++) {
+    if (passageiros[i].documento === doc) {
+      encontrou = true;
+      consultarVoosDisponiveis();
+      const vooEscolhido = prompt("Escolha o número do voo:");
+
+      for (let j = 0; j < voos.length; j++) {
+        if (
+          voos[j].numero === vooEscolhido &&
+          voos[j].quantidadeEmbarcados < voos[j].capacidade
+        ) {
+          passageiros[i].statusEmbarque = true;
+          voos[j].quantidadeEmbarcados++;
+          alert("Passageiro embarcado com sucesso.");
+          return;
         }
-        alert("Voo não encontrado ou lotado.");
       }
-    }
-  
-    if (!encontrou) {
-      alert("Passageiro não encontrado.");
+      alert("Voo não encontrado ou lotado.");
     }
   }
-  
+
+  if (!encontrou) {
+    alert("Passageiro não encontrado.");
+  }
+}
+
+function emitirBilhete() {
+  passageiros.forEach((p, i) => {
+    console.log("----------------------------");
+    console.log("Passageiro: " + p.nome);
+    console.log("Documento: " + p.documento);
+    console.log("Status Embarque: " + (p.statusEmbarque ? "Sim" : "Não"));
+    console.log(
+      "Bagagem Autorizada: " + (bagagens[i].autorizada ? "Sim" : "Não")
+    );
+  });
+}
