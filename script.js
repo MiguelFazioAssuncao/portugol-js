@@ -1,3 +1,6 @@
+// iniciar com comando node script.js
+
+const prompt = require("prompt-sync")({ sigint: true });
 class Passageiro {
   constructor(nome, documento) {
     this.nome = nome;
