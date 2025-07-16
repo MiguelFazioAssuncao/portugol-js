@@ -109,3 +109,7 @@ function emitirBilhete() {
 function encerrarSistema() {
   alert("Encerrando sistema...");
 }
+
+voos.push(new Voo("101", "São Paulo", "08:00", 5));
+voos.push(new Voo("202", "Rio de Janeiro", "10:30", 5));
+voos.push(new Voo("303", "Brasília", "13:15", 5));
