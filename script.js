@@ -150,3 +150,5 @@ function menuPrincipal() {
     }
   } while (opcao !== 5);
 }
+
+menuPrincipal();
